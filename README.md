@@ -7,6 +7,9 @@
 
 ## To Run
 `python vulnreport.py -c <chartname> -v <chartversion>`
+
+e.g. `python vulnreport.py -c bitnami/nginx -v 18.2.5` (assuming the bitnami repo is added to helm)
+
 See `python vulnreport.py -h` for instructions
 
 ## Notes on Implemenation
@@ -32,4 +35,6 @@ See the various `#TODO` and `#BUG` comments in the code.
 1. Test for edge cases and add more robust error-checking at each stage of the process. 
     1. I know of at least one case where trivy reported files that were too large to be scanned that would have needed to be handled. 
 
-1. Finally, as resource cleanup was a requirement, I might have checked `docker images` for any resulting images that had been pulled and remove those 
+1. As resource cleanup was a requirement, I might have checked `docker images` for any resulting images that had been pulled and remove those 
+
+1. Although for the purposes of this assessment I was pushing directly to my master branch in github, under ordinary circumstances I would have created a development branch to push to. 
